@@ -12,7 +12,8 @@ import org.springframework.beans.factory.annotation.Value;
  * Description:
  */
 // failfast 表示当前服务的容错方式为快速失败，建议增删改操作使用。默认的方式是 failover，即失败自动切换，建议查询时使用这个。
-@Service(cluster = "failfast")
+// loadbalance 用来指定负载均衡的策略，默认的策略是 random。
+@Service(cluster = "failfast", loadbalance = "roundrobin")
 public class HelloServiceImpl implements IHelloService {
 
     @Value("${dubbo.application.name}")

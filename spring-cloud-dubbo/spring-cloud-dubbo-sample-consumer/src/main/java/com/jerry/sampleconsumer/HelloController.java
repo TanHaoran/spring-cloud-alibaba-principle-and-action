@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Reference
+    @Reference(mock = "com.jerry.sampleconsumer.MockHelloService", cluster = "failfast")
     private IHelloService helloService;
 
     @GetMapping("/say")
