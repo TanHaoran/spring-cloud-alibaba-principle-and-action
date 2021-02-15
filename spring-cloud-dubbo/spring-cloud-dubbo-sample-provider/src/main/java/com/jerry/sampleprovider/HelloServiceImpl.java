@@ -11,7 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
  * Time: 17:08
  * Description:
  */
-@Service
+// failfast 表示当前服务的容错方式为快速失败，建议增删改操作使用。默认的方式是 failover，即失败自动切换，建议查询时使用这个。
+@Service(cluster = "failfast")
 public class HelloServiceImpl implements IHelloService {
 
     @Value("${dubbo.application.name}")
