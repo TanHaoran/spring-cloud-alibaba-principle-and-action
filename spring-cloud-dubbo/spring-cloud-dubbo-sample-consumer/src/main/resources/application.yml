@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-cloud-dubbo-sample-consumer
+  cloud:
+    zookeeper:
+      discovery:
+        ## 服务是否需要注册到注册中心
+        register: false
+      # zookeeper 的连接字符串
+      connect-string: localhost:2181
+
+dubbo:
+  cloud:
+    subscribed-services: spring-cloud-dubbo-sample-provider

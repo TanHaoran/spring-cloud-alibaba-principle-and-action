@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-cloud-dubbo-sample-provider
+  cloud:
+    zookeeper:
+      discovery:
+        ## 服务是否需要注册到注册中心
+        register: true
+      # zookeeper 的连接字符串
+      connect-string: localhost:2181
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20880

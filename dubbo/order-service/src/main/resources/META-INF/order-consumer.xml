@@ -12,5 +12,5 @@
     <dubbo:registry address="N/A"/>
     <!-- 生成远程服务代理，可以和本地 Bean 一样适用 userService -->
     <dubbo:reference id="userService" interface="com.jerry.userapi.IUserService"
-                     url="dubbo://192.168.1.228:20880/com.jerry.userapi.IUserService"/>
+                     url="dubbo://localhost:20880/com.jerry.userapi.IUserService"/>
 </beans>
