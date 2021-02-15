@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="order-service"/>
+    <!-- 服务注册中心的地址，N/A 表示不注册 -->
+    <dubbo:registry address="N/A"/>
+    <!-- 生成远程服务代理，可以和本地 Bean 一样适用 userService -->
+    <dubbo:reference id="userService" interface="com.jerry.userapi.IUserService"
+                     url="dubbo://192.168.1.228:20880/com.jerry.userapi.IUserService"/>
+</beans>
